@@ -61,5 +61,8 @@ def open_browser():
     webbrowser.open_new('http://127.0.0.1:8080/')  # Remplacez par l'adresse et le port de votre application
 
 if __name__ == '__main__':
-    Timer(1, open_browser).start()  # Délai de 1 seconde avant d'ouvrir le navigateur
+    # Vérifier si l'application est en mode développement
+    if os.environ.get('FLASK_ENV') == 'development':
+        Timer(1, open_browser).start()  # Ouvrir le navigateur uniquement en mode développement
+    
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
