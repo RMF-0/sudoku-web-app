@@ -1,6 +1,6 @@
 # Application Web de Résolution de Sudoku
 
-Ce projet est une application web permettant de résoudre des grilles de Sudoku. Elle est construite avec Flask et offre une interface interactive pour saisir une grille de Sudoku et obtenir une solution.
+Ce projet est une application web open source permettant de résoudre des grilles de Sudoku. Elle est construite avec Flask et offre une interface interactive pour saisir une grille de Sudoku et obtenir une solution. Les contraintes du Sudoku sont traduites en logique propositionnelle au format DIMACS, puis résolues à l'aide de **PySAT**, un SAT Solver.
 
 ## Structure du Projet
 
@@ -41,7 +41,7 @@ sudoku-web-app
    - Werkzeug
    - numpy
    - pandas
-   - python-sat
+   - python-sat (PySAT)
 
 ## Lancer l'Application
 
@@ -55,8 +55,19 @@ L'application démarrera un serveur web local. Ouvrez votre navigateur et accéd
 ## Utilisation
 
 1. Saisissez une grille de Sudoku dans la grille fournie. Utilisez `0` pour les cases vides.
-2. Cliquez sur le bouton "Solve" pour trouver la solution.
-3. La solution sera affichée directement dans la grille.
+2. Cliquez sur le bouton "Solve" pour traduire la grille en clauses logiques au format DIMACS et résoudre le problème avec le SAT Solver.
+3. La solution sera affichée directement dans la grille. Les valeurs générées par le solveur seront affichées en bleu.
+
+## Fonctionnalités
+
+- Traduction des contraintes du Sudoku en logique propositionnelle.
+- Génération d'un fichier DIMACS (`sudoku.cnf`) contenant les clauses logiques.
+- Résolution des contraintes avec **PySAT**.
+- Téléchargement des fichiers DIMACS (`sudoku.cnf`) et solution (`sudoku.out`) dans un fichier ZIP.
+
+## Open Source
+
+Ce projet est open source. Vous pouvez consulter, modifier et redistribuer le code selon les termes de la licence.
 
 ## Contribuer
 
