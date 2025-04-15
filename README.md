@@ -27,7 +27,7 @@ sudoku-web-app
 
 1. Clonez le dépôt :
    ```bash
-   git clone <url-du-depot>
+   git clone https://github.com/RMF-0/sudoku-web-app.git
    cd sudoku-web-app
    ```
 
