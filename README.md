@@ -23,6 +23,23 @@ sudoku-web-app
 └── README.md                    # Documentation du projet
 ```
 
+## Prérequis
+
+Avant de commencer, assurez-vous que les éléments suivants sont installés sur votre système :
+
+1. **Python 3** : Version 3.7 ou supérieure.
+2. **pip** : Le gestionnaire de paquets Python.
+3. **venv** : Pour créer un environnement virtuel isolé.
+
+Sur une distribution Linux (comme Debian), vous pouvez les installer avec les commandes suivantes :
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv -y
+```
+
+Sur Windows, téléchargez et installez Python depuis [python.org](https://www.python.org/).
+
 ## Installation
 
 1. Clonez le dépôt :
@@ -31,7 +48,14 @@ sudoku-web-app
    cd sudoku-web-app
    ```
 
-2. Installez les dépendances nécessaires :
+2. Créez un environnement virtuel et activez-le :
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # Sur Linux/Mac
+   venv\Scripts\activate     # Sur Windows
+   ```
+
+3. Installez les dépendances nécessaires :
    ```bash
    pip install -r requirements.txt
    ```
