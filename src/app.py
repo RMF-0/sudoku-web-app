@@ -2,6 +2,8 @@ import os
 import zipfile
 from flask import Flask, render_template, request, jsonify, send_file
 from sudoku_solver.solver import generer_dimacs, resoudre_sudoku, analyser_solution
+import webbrowser
+from threading import Timer
 
 app = Flask(__name__)
 
@@ -56,5 +58,9 @@ def download():
     # Envoyer le fichier ZIP au client
     return send_file(zip_filename, as_attachment=True)
 
+def open_browser():
+    webbrowser.open_new('http://127.0.0.1:8080/')  # Remplacez par l'adresse et le port de votre application
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    Timer(1, open_browser).start()  # Délai de 1 seconde avant d'ouvrir le navigateur
+    app.run(host='127.0.0.1', port=8080, debug=True)

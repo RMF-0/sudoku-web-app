@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Sudoku Solver</title>
+    <title>Résolveur de Sudoku</title>
 </head>
 <body>
     <div class="container">
@@ -20,10 +20,9 @@
             </tr>
             {% endfor %}
         </table>
-        <button id="solve-button">Solve</button>
-        <button id="reset-button">Reset</button>
-        <button id="download-button">Télécharger</button>
-        <div id="solution"></div>
+        <button id="solve-button">Résoudre</button>
+        <button id="reset-button">Réinitialiser</button>
+        <button id="download-button">Télécharger le fichier DIMACS</button>
     </div>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
