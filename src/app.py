@@ -62,4 +62,4 @@ def open_browser():
 
 if __name__ == '__main__':
     Timer(1, open_browser).start()  # Délai de 1 seconde avant d'ouvrir le navigateur
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
