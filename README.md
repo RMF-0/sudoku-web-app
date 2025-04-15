@@ -20,6 +20,7 @@ sudoku-web-app
 │   │   ├── solver.py           # Logique pour résoudre les grilles de Sudoku
 │   │   └── utils.py            # Fonctions utilitaires pour la résolution de Sudoku
 ├── requirements.txt             # Liste des dépendances nécessaires pour le projet
+├── Procfile                     # Fichier pour spécifier la commande de démarrage (déploiement)
 └── README.md                    # Documentation du projet
 ```
 
@@ -32,14 +33,14 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
 1. **Python 3** : Version 3.7 ou supérieure.
 2. **pip** : Le gestionnaire de paquets Python.
 3. **venv** : Pour créer un environnement virtuel isolé.
-4. **git** : pour clonner l'application dans votre répertoire.
+4. **git** : pour cloner l'application dans votre répertoire.
 
 ---
 
 ## Installation
 
 1. **Installer python3 et ses dépendances**
-   Pour linux (comme debian) : 
+   Pour Linux (comme Debian) : 
    ```bash
    sudo apt update
    sudo apt install python3 python3-pip python3-venv build-essential -y
@@ -57,11 +58,11 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
      ```
    - Redémarrez votre ordinateur si nécessaire.
    - Configurez une distribution Linux (comme Ubuntu).
-   - Installer Python et les dépendances système dans WSL** :
-   ```bash
-   sudo apt update
-   sudo apt install python3 python3-pip python3-venv build-essential -y
-   ```
+   - Installez Python et les dépendances système dans WSL :
+     ```bash
+     sudo apt update
+     sudo apt install python3 python3-pip python3-venv build-essential -y
+     ```
    Toute la suite se passe dans WSL pour Windows.
 
 2. **Cloner le dépôt** :
@@ -80,12 +81,28 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
    ```bash
    pip install -r requirements.txt
    ```
-5. **Lancer l'application** :
+
+5. **Configurer la variable d'environnement pour le mode développement** :
+   - Sous Linux/MacOS/WSL :
+     ```bash
+     export FLASK_ENV=development
+
+     ```
+   - Sous Windows (dans PowerShell) :
+     ```bash
+     $env:FLASK_ENV="development"
+     source ~/.bashrc
+     ```
+   - **Note** : Si vous utilisez WSL, la commande est identique à celle de Linux.
+
+6. **Lancer l'application** :
    ```bash
    python src/app.py
    ```
-6. **Accéder à l'application** :
+
+7. **Accéder à l'application** :
    Si votre navigateur ne s'ouvre pas automatiquement, ouvrez-le et accédez à `http://127.0.0.1:8080`.
+
 ---
 
 ## Utilisation
@@ -93,7 +110,7 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
 1. Saisissez une grille de Sudoku dans la grille fournie.
 2. Cliquez sur le bouton "Résoudre" pour traduire la grille en clauses logiques au format DIMACS et résoudre le problème avec le SAT Solver.
 3. La solution sera affichée directement dans la grille. Les valeurs générées par le solveur seront affichées en bleu.
-4. Télécharger le fichier DIMACS si nécessaire.
+4. Téléchargez le fichier DIMACS si nécessaire.
 
 ---
 
@@ -115,3 +132,11 @@ Ce projet est open source. Vous pouvez consulter, modifier et redistribuer le co
 ## Licence
 
 Ce projet est sous licence MIT.
+
+---
+
+## Procfile
+
+```
+web: python src/app.py
+```
