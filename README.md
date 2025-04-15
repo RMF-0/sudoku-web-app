@@ -23,6 +23,8 @@ sudoku-web-app
 └── README.md                    # Documentation du projet
 ```
 
+---
+
 ## Prérequis
 
 Avant de commencer, assurez-vous que les éléments suivants sont installés sur votre système :
@@ -30,57 +32,70 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
 1. **Python 3** : Version 3.7 ou supérieure.
 2. **pip** : Le gestionnaire de paquets Python.
 3. **venv** : Pour créer un environnement virtuel isolé.
+4. **git** : pour clonner l'application dans votre répertoire.
 
-Sur une distribution Linux (comme Debian), vous pouvez les installer avec les commandes suivantes :
-
-```bash
-sudo apt update
-sudo apt install python3 python3-pip python3-venv -y
-```
-
-Sur Windows, téléchargez et installez Python depuis [python.org](https://www.python.org/).
+---
 
 ## Installation
 
-1. Clonez le dépôt :
+1. **Installer python3 et ses dépendances**
+   Pour linux (comme debian) : 
+   ```bash
+   sudo apt update
+   sudo apt install python3 python3-pip python3-venv build-essential -y
+   ```
+
+   Pour MacOS, utilisez `brew` :
+   ```bash
+   brew install python3
+   ```
+
+   Pour Windows : 
+   - Ouvrez PowerShell en mode administrateur et exécutez :
+     ```bash
+     wsl --install
+     ```
+   - Redémarrez votre ordinateur si nécessaire.
+   - Configurez une distribution Linux (comme Ubuntu).
+   - Installer Python et les dépendances système dans WSL** :
+   ```bash
+   sudo apt update
+   sudo apt install python3 python3-pip python3-venv build-essential -y
+   ```
+   Toute la suite se passe dans WSL pour Windows.
+
+2. **Cloner le dépôt** :
    ```bash
    git clone https://github.com/RMF-0/sudoku-web-app.git
    cd sudoku-web-app
    ```
 
-2. Créez un environnement virtuel et activez-le :
+3. **Créer un environnement virtuel et activer-le** :
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # Sur Linux/Mac
-   venv\Scripts\activate     # Sur Windows
+   source venv/bin/activate
    ```
 
-3. Installez les dépendances nécessaires :
+4. **Installer les dépendances** :
    ```bash
    pip install -r requirements.txt
    ```
-
-   Les dépendances incluent :
-   - Flask
-   - Werkzeug
-   - numpy
-   - pandas
-   - python-sat (PySAT)
-
-## Lancer l'Application
-
-Pour lancer l'application, exécutez la commande suivante :
-```bash
-python src/app.py
-```
-
-L'application démarrera un serveur web local. Ouvrez votre navigateur et accédez à `http://127.0.0.1:5000` pour utiliser l'interface de résolution de Sudoku.
+5. **Lancer l'application** :
+   ```bash
+   python src/app.py
+   ```
+6. **Accéder à l'application** :
+   Si votre navigateur ne s'ouvre pas automatiquement, ouvrez-le et accédez à `http://127.0.0.1:8080`.
+---
 
 ## Utilisation
 
-1. Saisissez une grille de Sudoku dans la grille fournie. Utilisez `0` pour les cases vides.
-2. Cliquez sur le bouton "Solve" pour traduire la grille en clauses logiques au format DIMACS et résoudre le problème avec le SAT Solver.
+1. Saisissez une grille de Sudoku dans la grille fournie.
+2. Cliquez sur le bouton "Résoudre" pour traduire la grille en clauses logiques au format DIMACS et résoudre le problème avec le SAT Solver.
 3. La solution sera affichée directement dans la grille. Les valeurs générées par le solveur seront affichées en bleu.
+4. Télécharger le fichier DIMACS si nécessaire.
+
+---
 
 ## Fonctionnalités
 
@@ -89,13 +104,13 @@ L'application démarrera un serveur web local. Ouvrez votre navigateur et accéd
 - Résolution des contraintes avec **PySAT**.
 - Téléchargement des fichiers DIMACS (`sudoku.cnf`) et solution (`sudoku.out`) dans un fichier ZIP.
 
+---
+
 ## Open Source
 
 Ce projet est open source. Vous pouvez consulter, modifier et redistribuer le code selon les termes de la licence.
 
-## Contribuer
-
-Les contributions sont les bienvenues ! Veuillez ouvrir une issue ou soumettre une pull request pour toute amélioration ou correction de bug.
+---
 
 ## Licence
 

@@ -36,7 +36,6 @@ def solve():
     grille_solution_format = [
         [grille_solution[i][j] for j in range(9)] for i in range(9)
     ]
-    print(grille_solution_format)
     return jsonify(grille_solution_format)
 
 @app.route('/download', methods=['GET'])
