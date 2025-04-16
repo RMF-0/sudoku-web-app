@@ -86,12 +86,12 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
    - Sous Linux/MacOS/WSL :
      ```bash
      export FLASK_ENV=development
-
+     source ~/.bashrc
      ```
    - Sous Windows (dans PowerShell) :
      ```bash
      $env:FLASK_ENV="development"
-     source ~/.bashrc
+
      ```
    - **Note** : Si vous utilisez WSL, la commande est identique à celle de Linux.
 
