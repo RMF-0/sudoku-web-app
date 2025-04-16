@@ -63,7 +63,6 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
      sudo apt update
      sudo apt install python3 python3-pip python3-venv build-essential -y
      ```
-   Toute la suite se passe dans WSL pour Windows.
 
 2. **Cloner le dépôt** :
    ```bash

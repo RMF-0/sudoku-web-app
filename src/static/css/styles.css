@@ -80,3 +80,21 @@ button:hover {
     font-size: 20px;
     color: #333;
 }
+
+/* Styles pour les cellules générées aléatoirement */
+.generated {
+    font-weight: bold;
+    color: black;
+}
+
+/* Styles pour les cellules saisies par l'utilisateur */
+.user-input {
+    font-weight: bold;
+    color: black;
+}
+
+/* Styles pour les cellules de la solution */
+.solution {
+    font-weight: normal;
+    color: blue;
+}
